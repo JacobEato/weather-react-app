@@ -2,9 +2,15 @@ import {React, useState} from "react";
 
 import 'leaflet/dist/leaflet.css';
 import {MapContainer, TileLayer, Marker, Popup} from "react-leaflet";
+import balloonPNG from "../assets/balloonIcon.png";
 
 
 function Map(props){
+    const balloonIcon = new L.icon({
+        iconUrl: balloonPNG,
+        iconSize: [25,25],
+        iconAnchor: [12, 41],
+    })
     return (
         
         <div>
@@ -21,6 +27,7 @@ function Map(props){
                     eventHandlers={{
                         click: () => {props.update(index)},
                     }}
+                    icon={balloonIcon}
                     ></Marker>
                 })}
 
