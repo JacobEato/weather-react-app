@@ -27,7 +27,7 @@ function App() {
           if (hour < 10){
             adjustment = '0';
           }
-          const response = await fetch("/treasure/" + adjustment + hour + ".json");
+          const response = await fetch("https://a.windbornesystems.com/treasure/" + adjustment + hour + ".json");
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
           }
